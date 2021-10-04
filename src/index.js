@@ -4,6 +4,9 @@ import { loadPage } from './utils/loadPage.js';
 import { isLoading } from './utils/isLoading.js';
 import { showToast } from './utils/showToast.js';
 
+import navbarFn from './components/navbar/navbar.js';
+import homePageFn from './pages/home/home.js';
+
 const app = document.querySelector('#app');
 const _productsService = productsService;
 const _categoriesService = categoriesService;
@@ -36,8 +39,8 @@ document.addEventListener('readystatechange', async () => {
         console.log('DOM complete');
         const navbarComp = await loadPage('navbar', 'component');
         const homePage = await loadPage('home', 'page');
-        app?.appendChild(navbarComp.fn(STORE, navbarComp.$elem));
-        app?.appendChild(homePage.fn(STORE, homePage.$elem));
+        app?.appendChild(navbarFn(STORE, navbarComp.$elem));
+        app?.appendChild(homePageFn(STORE, homePage.$elem));
         isLoading(false);
     }
     ;
