@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+	--margin-default: 1rem;
+	--padding-default: 1rem;
+}
+
+.animate__animated.animate__fadeOut, .animate__animated.animate__zoomIn {
+  --animate-duration: 200ms;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#home,
+#navbar {
+	padding: var(--padding-default) !important;
+}
+
+#home {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min-content, 300px));
+	justify-content: center;
+	gap: 1rem;
+	max-width: 1020px;
+	margin: auto;
+}
+
+#navbar-form-container {
+	box-shadow: 0 1rem 1rem 0rem rgba(0, 0, 0, 0.1);
+	background-color: #ffffff;
+}
+
+#go-up-btn {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	border-radius: 100%;
+	height: 46px;
+	width: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+
+#go-up-btn > span {
+	font-size: 3rem;
+}
+
+#go-up-btn:hover {
+	outline: none;
+}
+
+#spinner {
+	background-color: #000000;
+  color: #ff6815;
+	z-index: 1056;
+}
+
+.navbar-brand-ico {
+  position: absolute;
+  top: 30px;
+  right: 24px;
+	cursor: pointer;
+  font-size: 1.8rem;
+  color: #ff6815;
+  transition: background-color 200ms ease;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.navbar-brand-ico:hover {
+  background-color: #ff6815;
+  color: #FFFFFF;
+}
+
+.card {
+	max-width: 400px;
+}
+
+.card-img-top {
+	width: 100%;
+	height: 350px;
+	object-fit: contain;
+}
+
+.card-title {
+	color: var(--bs-gray-900);
+	text-transform: capitalize;
+	font-weight: bold;
+	min-height: 48px;
+}
+
+.btn-custom {
+	cursor: pointer;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	font-weight: bolder;
+	padding: 0.5rem 1rem;
+	border: 3px solid;
+	border-radius: 0.3rem;
+	outline: none;
+	width: calc(100% - 2.5rem);
+	transition: background-color 200ms ease;
+}
+
+.btn-custom:hover,
+.btn-custom:active {
+	color: #ffffff;
+}
+
+.btn-custom:disabled {
+	opacity: .5;
+}
+
+.btn-custom--outline-orange {
+	background-color: hsl(0deg 0% 0% / 0%);
+	color: hsl(21deg 100% 54%);
+}
+
+.btn-custom--outline-orange:hover,
+.btn-custom--outline-orange:active {
+	background-color: #ff6815;
+}
+
+.btn-custom--solid-orange {
+	background-color: #ff6815;
+	color: #FFFFFF;
+}
+
+.btn-custom--solid-orange:hover,
+.btn-custom--solid-orange:active {
+	background-color: #FFFFFF;
+	outline: 1px solid #ff6815;
+	color: #ff6815;
+}
+
+@media screen and (max-width: 768px) {
+
+	#navbar {
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		box-shadow: 0 1rem 1rem 0rem rgba(0, 0, 0, 0.1);
+		background-color: #ffffff;
+	}
+
+	#navbar-subcontent {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		flex-grow: 1;
+		box-shadow: none;
+	}
+
+	/* #navbar-subcontent form {
+		flex-direction: row !important;
+		justify-content: space-evenly;
+	} */
+
+	/* #navbar-subcontent form > * {
+		width: calc(50% - 3rem) !important;
+	} */
+
+	#navbar-form-container form {
+		display: flex;
+		flex-direction: row;
+		box-shadow: none;
+		flex-grow: 1;
+	}
+
+	.navbar-brand-ico {
+		position: absolute;
+		font-size: 1.8rem;
+		color: #ff6815;
+		transition: background-color 200ms ease;
+		padding: 8px;
+		border-radius: 50%;
+	}
+}
+
+@media screen and (min-width: 767px) {
+	#navbar {
+		position: static;
+		top: 0;
+		display: flex;
+		box-shadow: 0 1rem 1rem 0rem rgba(0, 0, 0, 0.1);
+		background-color: #ffffff;
+	}
+
+	#navbar-form-container {
+		box-shadow: none;
+		flex-grow: 1;
+	}
+
+	#navbar-subcontent {
+		display: flex;
+		flex-direction: row;
+		margin: auto;
+		max-width: 1020px;
+		flex-grow: 1;
+	}
+	
+	#navbar-subcontent form {
+		box-shadow: none !important;
+		display: flex;
+		flex-direction: row !important;
+	}
+
+	#navbar-subcontent form > input {
+		flex-grow: 6;
+		width: 100% !important;
+	}
+
+	#navbar-subcontent form > select {
+		flex-grow: 1;
+		width: 100% !important;
+	}
+
+	#navbar-subcontent form > select:nth-child(2) {
+		flex-grow: 1;
+		margin: auto 1rem;
+	}
+}
