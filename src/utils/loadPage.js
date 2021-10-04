@@ -1,5 +1,5 @@
 export const loadPage = async (name, type) => {
-    const path = type === 'component' ? 'src/components/' : 'src/pages/';
+    const path = type === 'component' ? '/src/components/' : '/src/pages/';
     const $article = document.createElement('article');
     const module = import(`${path}${name}/${name}.js`);
     const page = fetch(`${path}${name}/${name}.html`);
